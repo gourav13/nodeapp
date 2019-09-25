@@ -5,7 +5,8 @@ app.get('/',(req,res)=>{
     res.send('hello welcome hey')
 })
 
-
-app.listen(2222,()=>{
-    console.log("server started")
-})
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
